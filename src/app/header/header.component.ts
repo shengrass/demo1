@@ -8,25 +8,27 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   title = "仙草的網頁"
   is_h3_highlight = false;
+  counter = 0;
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
-  changeTitle(evt: MouseEvent){
+  changeTitle(evt: MouseEvent) {
     this.title = "The shengrass's note";
+    this.counter ++;
     console.log(evt);
     console.log(evt.clientX);
   }
-  changeColor(){
-    if(this.is_h3_highlight === false){
-      this.is_h3_highlight=true;
+  changeColor() {
+    if (this.is_h3_highlight === false) {
+      this.is_h3_highlight = true;
     }
-    else{
-      this.is_h3_highlight=false;
+    else {
+      this.is_h3_highlight = false;
     }
   }
-  getStyle(){
-    return {'background-color': 'yellow'};
+  getStyle() {
+    return { 'background-color': 'yellow' };
   }
 }
