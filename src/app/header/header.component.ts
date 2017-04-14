@@ -10,13 +10,11 @@ export class HeaderComponent implements OnInit {
 
   @Output()
   titleChanged = new EventEmitter<string>();
-  is_h3_highlight = false;
   counter = 0;
 
   //New 物件時執行
-    constructor(public dataservice:DataService){
-
-  }
+  //傳入 DataService
+  constructor(public dataservice: DataService) { }
 
   //頁面初始化時會執行
   ngOnInit() { }
@@ -29,6 +27,8 @@ export class HeaderComponent implements OnInit {
     console.log(evt);
     console.log(evt.clientX);
   }
+
+  is_h3_highlight = false;
   changeColor() {
     if (this.is_h3_highlight === false) {
       this.is_h3_highlight = true;

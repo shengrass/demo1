@@ -18,6 +18,7 @@ import { MaskPipe } from './mask.pipe';
     FormsModule,
     HttpModule
   ],
+  //加上 Service 元件
   providers: [DataService],
   bootstrap: [AppComponent]
 })

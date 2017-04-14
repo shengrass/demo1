@@ -30,8 +30,10 @@
       <div class="pull-left">
         <!-- 內嵌繫結 -->
         <h1><a href="http://blog.miniasp.com/">{{ dataservice.title }}</a></h1>
-        <h3 [ngClass]="{'highlight': is_h3_highlight}" [ngStyle]="getStyle()" (click)="changeColor()">記載著 Will 在網路世界的學習心得與技術分享</h3>
-        <!--<h3 [Class.highlight]="is_h3_highlight" [ngStyle]="getStyle()" (click)="changeColor()">記載著 Will 在網路世界的學習心得與技術分享</h3>-->
+
+        <!--<h3 [ngClass]="{'highlight': is_h3_highlight}" [ngStyle]="getStyle()" (click)="changeColor()">記載著 Will 在網路世界的學習心得與技術分享</h3>-->
+
+        <h3 [class.highlight]="is_h3_highlight"  [style.background-color]="'yellow'" (click)="changeColor()">記載著 Will 在網路世界的學習心得與技術分享</h3>
       </div>
 
       <div *ngIf="counter % 2 == 1" id="social-icons" class="pull-right social-icon">
