@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
+  //jquery的選取器<tag>
+  //.app-root(class) #app-root(id)
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
