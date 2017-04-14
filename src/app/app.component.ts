@@ -1,3 +1,4 @@
+import { DataService } from './data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
   keyword = '';
 
   changeKeyword(value) {
     this.keyword = value;
+  }
+
+  constructor(public dataservice:DataService){
+
   }
 
   //只有按下 ESC 才會進入此 function

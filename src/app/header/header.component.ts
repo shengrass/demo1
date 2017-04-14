@@ -1,3 +1,4 @@
+import { DataService } from './../data.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -6,26 +7,24 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  //從app.component.html傳title進來
-  @Input()
-  title = "仙草的網頁"
 
   @Output()
   titleChanged = new EventEmitter<string>();
-
   is_h3_highlight = false;
   counter = 0;
 
   //New 物件時執行
-  constructor() { }
+    constructor(public dataservice:DataService){
+
+  }
 
   //頁面初始化時會執行
   ngOnInit() { }
 
   changeTitle(evt: MouseEvent) {
-    this.title = "The shengrass's note";
+    this.dataservice.title = "The shengrass's note";
     //把title傳到app.component.html
-    this.titleChanged.emit(this.title);
+    this.titleChanged.emit(this.dataservice.title);
     this.counter++;
     console.log(evt);
     console.log(evt.clientX);

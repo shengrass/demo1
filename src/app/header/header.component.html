@@ -25,11 +25,11 @@
   <div class="title-wrapper">
     <div class="container">
       <!-- 屬性繫結 -->
-      <img src="/assets/images/logo.png" class="pull-left logo" [title]="title" (click)="changeTitle($event)">
+      <img src="/assets/images/logo.png" class="pull-left logo" [title]="dataservice.title" (click)="changeTitle($event)">
 
       <div class="pull-left">
         <!-- 內嵌繫結 -->
-        <h1><a href="http://blog.miniasp.com/">{{ title }}</a></h1>
+        <h1><a href="http://blog.miniasp.com/">{{ dataservice.title }}</a></h1>
         <h3 [ngClass]="{'highlight': is_h3_highlight}" [ngStyle]="getStyle()" (click)="changeColor()">記載著 Will 在網路世界的學習心得與技術分享</h3>
         <!--<h3 [Class.highlight]="is_h3_highlight" [ngStyle]="getStyle()" (click)="changeColor()">記載著 Will 在網路世界的學習心得與技術分享</h3>-->
       </div>
