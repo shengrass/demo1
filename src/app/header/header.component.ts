@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   title = "仙草的網頁"
-
+  is_h3_highlight = false;
   constructor() { }
 
   ngOnInit() {
@@ -17,5 +17,16 @@ export class HeaderComponent implements OnInit {
     this.title = "The shengrass's note";
     console.log(evt);
     console.log(evt.clientX);
+  }
+  changeColor(){
+    if(this.is_h3_highlight === false){
+      this.is_h3_highlight=true;
+    }
+    else{
+      this.is_h3_highlight=false;
+    }
+  }
+  getStyle(){
+    return {'background-color': 'yellow'};
   }
 }
