@@ -25,7 +25,7 @@
   <div class="title-wrapper">
     <div class="container">
       <!-- 屬性繫結 -->
-      <img src="/assets/images/logo.png" class="pull-left logo" [title]="title">
+      <img src="/assets/images/logo.png" class="pull-left logo" [title]="title" (click)="changeTitle($event)">
 
       <div class="pull-left">
         <!-- 內嵌繫結 -->

@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  title = "My Angular2"
+  title = "仙草的網頁"
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  changeTitle(evt: MouseEvent){
+    this.title = "The shengrass's note";
+    console.log(evt);
+    console.log(evt.clientX);
+  }
 }
