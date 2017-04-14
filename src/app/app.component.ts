@@ -10,4 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent {
   title = 'app works!';
   keyword = '';
+
+  changeKeyword(value) {
+    this.keyword = value;
+  }
+
+  //只有按下 ESC 才會進入此 function
+  clearKeyword(evt: KeyboardEvent) {
+    this.keyword = '';
+
+    //this.keyword = (evt.target as HTMLInputElement).value;
+  }
 }
