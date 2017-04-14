@@ -11,11 +11,12 @@ export class HeaderComponent implements OnInit {
   title = "仙草的網頁"
 
   @Output()
-
-  titleChanged = new EventEmitter();
+  titleChanged = new EventEmitter<string>();
 
   is_h3_highlight = false;
   counter = 0;
+
+  //New 物件時執行
   constructor() { }
 
   //頁面初始化時會執行
@@ -23,6 +24,7 @@ export class HeaderComponent implements OnInit {
 
   changeTitle(evt: MouseEvent) {
     this.title = "The shengrass's note";
+    //把title傳到app.component.html
     this.titleChanged.emit(this.title);
     this.counter++;
     console.log(evt);
