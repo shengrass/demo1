@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,17 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  //從app.component.html傳title進來
+  @Input()
   title = "仙草的網頁"
+
+  @Output()
+
+  titleChanged = new EventEmitter();
+
   is_h3_highlight = false;
   counter = 0;
-
   constructor() { }
 
+  //頁面初始化時會執行
   ngOnInit() { }
 
   changeTitle(evt: MouseEvent) {
     this.title = "The shengrass's note";
-    this.counter ++;
+    this.titleChanged.emit(this.title);
+    this.counter++;
     console.log(evt);
     console.log(evt.clientX);
   }
